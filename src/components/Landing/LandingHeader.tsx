@@ -3,7 +3,10 @@ import styles from "./LandingHeader.module.less";
 const LandingHeader = () => {
   return (
     <div className={styles.landingHeader}>
-      랜딩페이지에서 헤더로 사용될 예정입니다.
+      <div className={styles.contents}>
+        <div>로고</div>
+        <div>다운로드</div>
+      </div>
     </div>
   );
 };
