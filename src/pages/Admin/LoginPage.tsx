@@ -1,7 +1,12 @@
+import LoginForm from "../../components/Admin/LoginForm";
 import styles from "./LoginPage.module.less";
 
 const LoginPage = () => {
-  return <div className={styles.loginPage}>로그인페이지입니다.</div>;
+  return (
+    <div className={styles.loginPage}>
+      <LoginForm />
+    </div>
+  );
 };
 
 export default LoginPage;
