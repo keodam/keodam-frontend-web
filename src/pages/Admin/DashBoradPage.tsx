@@ -1,10 +1,10 @@
-import LeftNevBar from "../../components/Admin/LeftNevBar";
+import LeftNavBar from "../../components/Admin/LeftNavBar";
 import styles from "./DashBoradPage.module.less";
 
 const DashBoradPage = () => {
   return (
     <div className={styles.dashBoradPage}>
-      <LeftNevBar />
+      <LeftNavBar />
       <div>대시보드입니다.</div>
     </div>
   );
