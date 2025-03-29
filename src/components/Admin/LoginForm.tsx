@@ -1,10 +1,22 @@
 import style from "./LoginForm.module.less";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
-  // id, password를 useState를 통해 상태관리
+  // id, password를 useState를 통해 상태관리: 로그인 시 필요한 정보
   const [id, setId] = useState<string>("");
   const [passWord, setPassWord] = useState<string>("");
+
+  const handleId = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    setId(e.target.value);
+
+  const handlePassWord = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassWord(e.target.value);
+  };
+
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate("../dash");
+  };
 
   return (
     <div>
@@ -15,7 +27,7 @@ const LoginForm = () => {
             name="id"
             className={style.idSelect}
             value={id}
-            onChange={(e) => setId(e.target.value)}
+            onChange={handleId}
           >
             <option value="leader">leader</option>
             <option value="pm">pm</option>
@@ -34,10 +46,12 @@ const LoginForm = () => {
             placeholder="비밀번호를 입력하세요."
             className={style.pwInput}
             value={passWord}
-            onChange={(e) => setPassWord(e.target.value)}
+            onChange={handlePassWord}
           />
         </div>
-        <div className={style.loginButton}>로그인</div>
+        <div className={style.loginButton} onClick={handleLogin}>
+          로그인
+        </div>
       </form>
     </div>
   );
