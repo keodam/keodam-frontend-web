@@ -5,6 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    padding: 0 20px;
+  }
 }
 .contents {
   width: 100%;
@@ -17,16 +21,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+  }
 }
 
 .content {
   width: 49%;
   height: 100%;
   border: 1px solid black;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 35%;
+  }
 }
 
 .assets {
   width: 49%;
   height: 100%;
   border: 1px solid black;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 50%;
+  }
 }
