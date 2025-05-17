@@ -21,11 +21,11 @@ const LandingPage = () => {
     <div>
       <LandingHeader />
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
-        <FullpageSection>
-          <First />
+      <FullpageSection>
+          <Second />
         </FullpageSection>
         <FullpageSection>
-          <Second />
+          <First />
         </FullpageSection>
         <FullpageSection>
           <Third />
