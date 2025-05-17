@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/Landing/LandingPage";
+import LoginPage from "./pages/Admin/LoginPage";
+import DashBoradPage from "./pages/Admin/DashBoradPage";
+import UserPage from "./pages/Admin/UserPage";
+import SupportPage from "./pages/Admin/SupportPage";
+import NoticePage from "./pages/Admin/NoticePage";
+import EventPage from "./pages/Admin/EventPage";
+import PayPage from "./pages/Admin/PayPage";
+import HistoryPage from "./pages/Admin/HistoryPage";
+import MatchingPage from "./pages/Admin/MatchingPage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Routes>
+        <Route path="" element={<LandingPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/dash" element={<DashBoradPage />}></Route>
+        <Route path="/user" element={<UserPage />}></Route>
+        <Route path="/matching" element={<MatchingPage />}></Route>
+        <Route path="/support" element={<SupportPage />}></Route>
+        <Route path="/notice" element={<NoticePage />}></Route>
+        <Route path="/event" element={<EventPage />}></Route>
+        <Route path="/pay" element={<PayPage />}></Route>
+        <Route path="/history" element={<HistoryPage />}></Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
