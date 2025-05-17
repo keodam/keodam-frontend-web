@@ -66,7 +66,7 @@ const data: User[] = [
     "uuid": "#P0006",
     "name": "최인석",
     "userId": "dlstjr@naver.com",
-    "nickname": "코어",
+    "nickname": "딥시크",
     "role": "멘토",
     "phone": "010 - 6666 - 6666"
   },
@@ -74,7 +74,7 @@ const data: User[] = [
     "uuid": "#P0007",
     "name": "최다연",
     "userId": "ekdus@naver.com",
-    "nickname": "빠른02",
+    "nickname": "커담 5분컷",
     "role": "멘토 / 멘티",
     "phone": "010 - 7777 - 7777"
   },
@@ -82,7 +82,7 @@ const data: User[] = [
     "uuid": "#P0008",
     "name": "권지후",
     "userId": "dlthf@naver.com",
-    "nickname": "팀시크",
+    "nickname": "피피티는 나한테",
     "role": "멘티",
     "phone": "010 - 8888 - 8888"
   },
@@ -90,7 +90,7 @@ const data: User[] = [
     "uuid": "#P0009",
     "name": "이슬",
     "userId": "wlgn@naver.com",
-    "nickname": "기획군",
+    "nickname": "기획굳",
     "role": "멘티",
     "phone": "010 - 9999 - 9999"
   },
