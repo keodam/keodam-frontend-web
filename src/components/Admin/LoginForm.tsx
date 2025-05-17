@@ -21,6 +21,7 @@ const LoginForm = () => {
   return (
     <div>
       <form className={style.loginForm}>
+        <div className={style.idPw}>
         <div className={style.formIdPw}>
           <input
             type="text"
@@ -54,6 +55,7 @@ const LoginForm = () => {
             value={passWord}
             onChange={handlePassWord}
           />
+        </div>
         </div>
         <div className={style.loginButton} onClick={handleLogin}>
           로그인
