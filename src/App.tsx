@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/Landing/LandingPage";
-import LoginPage from "./pages/Admin/LoginPage";
+import LoginPage from "./pages/Admin/login/LoginPage";
 import DashBoradPage from "./pages/Admin/DashBoradPage";
 import UserPage from "./pages/Admin/UserPage";
 import SupportPage from "./pages/Admin/SupportPage";
