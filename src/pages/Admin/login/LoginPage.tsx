@@ -1,4 +1,4 @@
-import LoginForm from "../../components/Admin/LoginForm";
+import LoginForm from "./LoginForm";
 import styles from "./LoginPage.module.less";
 
 const LoginPage = () => {
