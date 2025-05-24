@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const LeftNavBar = () => {
-  const [userName, setUserName] = useState<string>("user");
+  const [userName, setUserName] = useState<string>("사용자 이름");
 
   const navigate = useNavigate();
   const goDash = () => {
@@ -38,6 +38,7 @@ const LeftNavBar = () => {
   return (
     <nav className={styles.leftNavBar}>
       <div className={styles.contents}>
+        <div className={styles.logo}>로고</div>
         <div className={styles.name}>{userName}</div>
         <div className={styles.buttonContainer}>
           <div className={styles.buttonsTop}>
@@ -78,3 +79,6 @@ const LeftNavBar = () => {
 };
 
 export default LeftNavBar;
+
+// 로고 추가
+// 아이콘 추가

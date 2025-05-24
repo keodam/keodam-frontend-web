@@ -1,11 +1,15 @@
 import LeftNavBar from "../../components/Admin/LeftNavBar";
+import UserTable from "../../components/tables/UserTable";
 import style from "./UserPage.module.less";
 
 const UserPage = () => {
   return (
     <div className={style.userPage}>
       <LeftNavBar />
-      유저를 관리하는 페이지입니다.
+      <div className={style.contents}>
+      <div className={style.title}> 고객관리 </div>
+      <UserTable />
+      </div>
     </div>
   );
 };
