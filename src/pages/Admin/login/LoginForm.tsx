@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { ReactComponent as LoginLogo } from '../../../assets/Admin/login/loginlogo.svg?react';
 import loginLogo from '../../../assets/Admin/login/loginlogo.svg';
+import { signIn } from "../../../axios/login";
 
 
 
@@ -21,8 +22,17 @@ const LoginForm = () => {
   };
 
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate("../dash");
+
+
+  const handleLogin = async () => {
+      try {
+          await signIn(id, passWord);
+          alert('로그인 성공');
+          navigate("../dash");
+       } catch (error) {
+          alert('로그인 실패');
+          console.error(error);
+       }
   };
 
   return (
