@@ -11,14 +11,14 @@ import { signIn } from "../../../axios/login";
 const LoginForm = () => {
   // id, password를 useState를 통해 상태관리: 로그인 시 필요한 정보
   const [id, setId] = useState<string>("");
-  const [passWord, setPassWord] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleId = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     setId(e.target.value);
   };
 
-  const handlePassWord = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassWord(e.target.value);
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const LoginForm = () => {
 
   const handleLogin = async () => {
       try {
-          await signIn(id, passWord);
+          await signIn(id, password);
           alert('로그인 성공');
           navigate("../dash");
        } catch (error) {
@@ -47,6 +47,7 @@ const LoginForm = () => {
             value={id}
             onChange={handleId}
           >
+            <option value="">id</option>
             <option value="leader">leader</option>
             <option value="pm">pm</option>
             <option value="web">web</option>
@@ -60,8 +61,8 @@ const LoginForm = () => {
             name="password"
             placeholder="비밀번호"
             className={style.pwInput}
-            value={passWord}
-            onChange={handlePassWord}
+            value={password}
+            onChange={handlePassword}
           />
         </div>
         </div>
