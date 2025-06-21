@@ -19,16 +19,16 @@ const LandingPage = () => {
 
   return (
     <div>
-      {/* <LandingHeader /> */}
+      <LandingHeader />
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
           <Second />
         </FullpageSection>
         <FullpageSection>
-          <First />
+          <Third />
         </FullpageSection>
         <FullpageSection>
-          <Third />
+          <First />
         </FullpageSection>
         <FullpageSection>
           <Fourth />
