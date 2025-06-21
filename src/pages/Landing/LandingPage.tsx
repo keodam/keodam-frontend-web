@@ -19,7 +19,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <LandingHeader />
+      {/* <LandingHeader /> */}
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
           <Second />
