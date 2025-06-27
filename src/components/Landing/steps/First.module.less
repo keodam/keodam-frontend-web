@@ -1,22 +1,33 @@
 .first {
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
+  padding-top: 132px; // 헤더 높이만큼 아래로 밀기
+
   border: 1px solid black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // align-items: center;
 
   @media (max-width: 1200px) {
     padding: 0 20px;
   }
 }
-.contents {
+.total{
   width: 100%;
   max-width: 1200px;
-  height: 600px;
+  padding: 10px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3vh; // 여기서 간격 조절
+}
+.contents {
+  width: 100%;
+  height: 330px;
   border: 1px solid black;
 
   padding: 10px 30px;
+  margin: 3vh 0 10vh 0;
 
   display: flex;
   align-items: center;
@@ -33,7 +44,7 @@
 }
 
 .content {
-  width: 49%;
+  width: 50%;
   height: 100%;
   border: 1px solid black;
 
@@ -47,9 +58,26 @@
   width: 49%;
   height: 100%;
   border: 1px solid black;
-
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 1200px) {
     width: 100%;
     height: 50%;
   }
+}
+.title1{
+  font-size: 45px;
+  text-align: left;
+}
+.title2{
+  font-size: 45px;
+  text-align: right;
+}
+.titleContent{
+  text-align: right;
+}
+.color{
+  color: #4974F6
 }
