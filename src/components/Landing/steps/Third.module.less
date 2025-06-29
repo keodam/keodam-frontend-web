@@ -1,38 +1,83 @@
-.third {
+.first {
   width: 100vw;
-  height: calc(100vh - 132px);
-
-  padding-top: 132px;
-  // border: 1px solid black;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-}
-
-.box{
-  width: 100%;
+  // height: 100vh;
+  padding-top: 132px; // 헤더 높이만큼 아래로 밀기
 
   border: 1px solid black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  // align-items: center;
 
-
-  margin-top: 5vh;   // 헤더와 박스 사이에 간격
-  margin-bottom: 2vh;
-
-  font-size: 23px;
+  @media (max-width: 1200px) {
+    padding: 0 20px;
+  }
 }
-.title{
+.total{
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3vh; // 여기서 간격 조절
+}
+.contents {
+  width: 100%;
+  height: 330px;
+  border: 1px solid black;
+
+  padding: 10px 30px;
+  margin: 3vh 0 10vh 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 10px;
+  }
+}
+
+.content {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 35%;
+  }
+}
+
+.assets {
+  width: 49%;
+  height: 100%;
+  border: 1px solid black;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 50%;
+  }
+}
+.title1{
   font-size: 45px;
+  text-align: left;
+}
+.title2{
+  font-size: 45px;
+  text-align: right;
+}
+.titleContent{
+  text-align: right;
 }
 .color{
-  color:#4974F6;
-}
-.img{
-  width: 100%;
-
-  padding: 5vh 0;
-  display: flex;
-  justify-content: center;
+  color: #4974F6
 }
