@@ -1,4 +1,4 @@
-import LeftNavBar from "../../components/Admin/LeftNavBar";
+import LeftNavBar from "../../../components/Admin/LeftNavBar";
 import styles from "./DashBoradPage.module.less";
 
 const DashBoradPage = () => {
