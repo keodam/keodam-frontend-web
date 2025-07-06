@@ -2,7 +2,7 @@
 import styles from "./First.module.less";
 import Logo from '../../../assets/Landing/헤더 로고.svg'
 import LangingLogo from "../../../assets/Landing/첫 페이지 로고.svg"
-
+// import LandingHeader from "../LandingHeader";
 const First = () => {
   return(
   <div className={styles.secondPage}>
