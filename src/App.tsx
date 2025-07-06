@@ -8,7 +8,7 @@ import SupportPage from "./pages/Admin/SupportPage";
 import NoticePage from "./pages/Admin/NoticePage";
 import EventPage from "./pages/Admin/EventPage";
 import PayPage from "./pages/Admin/PayPage";
-import HistoryPage from "./pages/Admin/HistoryPage";
+import HistoryPage from "./pages/Admin/history/HistoryPage";
 import MatchingPage from "./pages/Admin/MatchingPage";
 
 function App() {

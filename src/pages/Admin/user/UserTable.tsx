@@ -18,7 +18,7 @@ interface User {
   role: string;
   phone: string;
 }
-
+// 하드코딩해서 넣어둔 내용
 const data: User[] = [
   {
     uuid: '#P0001',
