@@ -1,5 +1,5 @@
-import LeftNavBar from "../../components/Admin/LeftNavBar";
-import UserTable from "../../components/tables/UserTable";
+import LeftNavBar from "../../../components/Admin/LeftNavBar";
+import UserTable from "./UserTable";
 import style from "./UserPage.module.less";
 
 const UserPage = () => {

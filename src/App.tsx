@@ -2,13 +2,13 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/Landing/LandingPage";
 import LoginPage from "./pages/Admin/login/LoginPage";
-import DashBoradPage from "./pages/Admin/DashBoradPage";
-import UserPage from "./pages/Admin/UserPage";
+import DashBoradPage from "./pages/Admin/dash/DashBoradPage";
+import UserPage from "./pages/Admin/user/UserPage";
 import SupportPage from "./pages/Admin/SupportPage";
 import NoticePage from "./pages/Admin/NoticePage";
 import EventPage from "./pages/Admin/EventPage";
 import PayPage from "./pages/Admin/PayPage";
-import HistoryPage from "./pages/Admin/HistoryPage";
+import HistoryPage from "./pages/Admin/history/HistoryPage";
 import MatchingPage from "./pages/Admin/MatchingPage";
 
 function App() {
