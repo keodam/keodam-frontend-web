@@ -1,16 +1,15 @@
-// UserTable.tsx
 import React, { useState, useMemo } from 'react';
 import {
-  useReactTable,           // 테이블 인스턴스를 생성하는 메인 훅
-  getCoreRowModel,         // 기본 row 렌더링 로직
-  getFilteredRowModel,     // 필터링 기능을 위한 row 모델
-  getSortedRowModel,       // 정렬 기능을 위한 row 모델
-  flexRender,              // 셀이나 헤더를 실제 JSX로 렌더링
-  createColumnHelper,      // 타입 기반 컬럼 정의를 도와주는 도구
+  useReactTable,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getSortedRowModel,
+  flexRender,
+  createColumnHelper,
 } from '@tanstack/react-table';
-import styles from './UserTable.module.less'; // module.less 스타일 불러오기
+import styles from './UserTable.module.less';
+import Search from '../../../components/Admin/Search';
 
-// 사용자 정보 타입 정의
 interface User {
   uuid: string;
   name: string;
@@ -20,7 +19,6 @@ interface User {
   phone: string;
 }
 
-// 예시 데이터 (실제 환경에선 API로 가져올 수 있음)
 const data: User[] = [
   {
     uuid: '#P0001',
@@ -102,13 +100,10 @@ const data: User[] = [
     "role": "멘티",
     "phone": "010 - 0000 - 0000"
   }
-
 ];
 
-// 컬럼 생성 도우미
 const columnHelper = createColumnHelper<User>();
 
-// 테이블 컬럼 정의
 const columns = [
   columnHelper.accessor('uuid', { header: 'uuid' }),
   columnHelper.accessor('name', { header: '이름' }),
@@ -118,11 +113,9 @@ const columns = [
   columnHelper.accessor('phone', { header: '전화번호' }),
 ];
 
-// 테이블 컴포넌트
 const UserTable = () => {
-  const [globalFilter, setGlobalFilter] = useState(''); // 검색어 상태
+  const [globalFilter, setGlobalFilter] = useState('');
 
-  // 검색어로 데이터 필터링
   const filteredData = useMemo(() => {
     if (!globalFilter) return data;
     return data.filter((item) =>
@@ -132,7 +125,6 @@ const UserTable = () => {
     );
   }, [globalFilter]);
 
-  // TanStack Table 훅으로 테이블 인스턴스 생성
   const table = useReactTable({
     data: filteredData,
     columns,
@@ -144,30 +136,18 @@ const UserTable = () => {
 
   return (
     <div className={styles.container}>
-    
-
-      {/* 상단 바: 총 건수 및 검색 입력 */}
       <div className={styles.topBar}>
         <span>총 {data.length}건</span>
-        <input
-          type="text"
-          placeholder="검색어를 입력하세요"
-          value={globalFilter}
-          onChange={(e) => setGlobalFilter(e.target.value)}
-          className={styles.searchInput}
-        />
+        <Search globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} />
       </div>
 
-      {/* 테이블 렌더링 */}
       <table className={styles.table}>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th key={header.id} onClick={header.column.getToggleSortingHandler()}>
-                  {/* 헤더 텍스트 렌더링 */}
                   {flexRender(header.column.columnDef.header, header.getContext())}
-                  {/* 정렬 아이콘 표시 */}
                   {header.column.getIsSorted() === 'asc'
                     ? ' 🔼'
                     : header.column.getIsSorted() === 'desc'
@@ -183,7 +163,6 @@ const UserTable = () => {
             <tr key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id}>
-                  {/* 셀 내용 렌더링 */}
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
