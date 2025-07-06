@@ -1,9 +1,27 @@
+import { useEffect, useRef } from "react";
 import styles from "./Fourth.module.less";
 import 원두 from "../../../assets/Landing/4페이지 원두.png"
 import 커뮤니티 from "../../../assets/Landing/4페이지 폰.png"
 import 앱 from "../../../assets/Landing/4페이지 로고.png"
 import 로고 from "../../../assets/Landing/헤더 로고.svg"
-const Fourth = () => {
+
+interface FourthProps {
+  autoScrollToSection3: boolean;
+  setAutoScrollToSection3: (value: boolean) => void;
+}
+
+const Fourth = ({ autoScrollToSection3, setAutoScrollToSection3 }: FourthProps) => {
+  const section3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (autoScrollToSection3 && section3Ref.current) {
+      section3Ref.current.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        setAutoScrollToSection3(false); // 스크롤 완료 후 상태 초기화
+      }, 800); // 스크롤 애니메이션 시간에 맞춰 약간 여유 있게
+    }
+  }, [autoScrollToSection3]);
+
   return (
     <div className={styles.fourth}>
       <div className={styles.section}>
@@ -27,7 +45,7 @@ const Fourth = () => {
              가진 사람들과의 <span className={styles.color}>소중한 네트워킹 기회</span>를 만들어보세요.
         </div>
       </div>
-      <div className={styles.section3}>
+      <div className={styles.section3} ref={section3Ref}>
         <div><img src={앱} alt="앱 아이콘"/></div>
         <div className={styles.title3}>한잔의 커피 <br></br>
              무한한 가능성의 담소

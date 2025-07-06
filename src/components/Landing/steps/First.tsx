@@ -3,7 +3,11 @@ import styles from "./First.module.less";
 import Logo from '../../../assets/Landing/헤더 로고.svg'
 import LangingLogo from "../../../assets/Landing/첫 페이지 로고.svg"
 // import LandingHeader from "../LandingHeader";
-const First = () => {
+interface FirstProps {
+  setStep: (step: number) => void;
+}
+
+const First = ({ setStep }: FirstProps) => {
   return(
   <div className={styles.secondPage}>
     <div className={styles.second}>
@@ -22,9 +26,9 @@ const First = () => {
       <img src={LangingLogo} alt="첫 랜딩페이지 로고"/>
     </div>
     <div className={styles.buttonBox}>
-      <div className={styles.button}>#커피챗</div>
-      <div className={styles.button}>#멘토/멘티</div>
-      <div className={styles.button}>#원두</div>
+      <div className={styles.button} onClick={() => setStep(1)}>#커피챗</div>
+      <div className={styles.button} onClick={() => setStep(2)}>#멘토/멘티</div>
+      <div className={styles.button} onClick={() => {console.log("4페이지 이동 클릭"); setStep(3)}}>#원두</div>
     </div>
     </div>
   </div>);

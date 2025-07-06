@@ -2,11 +2,12 @@ import styles from "./LandingPage.module.less";
 import { useState } from "react";
 
 import LandingHeader from "../../components/Landing/LandingHeader";
+// import First from "../../components/Landing/steps/First";
 import First from "../../components/Landing/steps/First";
 import Second from "../../components/Landing/steps/Second";
 import Third from "../../components/Landing/steps/Third";
 import Fourth from "../../components/Landing/steps/Fourth";
-import LandingFooter from "../../components/Landing/LandingFooter";
+// import LandingFooter from "../../components/Landing/LandingFooter";
 
 import {
   FullpageContainer,
@@ -16,13 +17,23 @@ import "@shinyongjun/react-fullpage/css";
 
 const LandingPage = () => {
   const [step, setStep] = useState<number>(0);
+  const [scrollToSection3, setScrollToSection3] = useState<boolean>(false);
+
+  const handleSetStep = (index: number, scrollToSection3?: boolean) => {
+    setStep(index);
+    if (index === 3) {
+      setScrollToSection3(!!scrollToSection3);
+    } else {
+      setScrollToSection3(false);
+    }
+  };
 
   return (
     <div>
-      <LandingHeader step={step} />
+      <LandingHeader step={step} setStep={handleSetStep}/>
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
-          <First />
+          <First setStep={setStep}/>
         </FullpageSection>
         <FullpageSection>
           <Second />
@@ -31,10 +42,13 @@ const LandingPage = () => {
           <Third />
         </FullpageSection>
         <FullpageSection>
-          <Fourth />
+          <Fourth 
+            autoScrollToSection3={scrollToSection3} 
+            setAutoScrollToSection3={setScrollToSection3}
+          />
         </FullpageSection>
       </FullpageContainer>
-      <LandingFooter />
+      {/* <LandingFooter /> */}
     </div>
   );
 };
