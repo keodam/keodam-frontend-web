@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   useReactTable,
   getCoreRowModel,
@@ -10,18 +10,10 @@ import {
 import styles from '../../Admin/user/UserTable.module.less';  
 import Search from '../../../components/Admin/Search';
 import TableNavigation from '../../../components/Admin/TableNavigation';
+import { getHistoryList, History } from '../../../axios/history'
 
-interface History {
-  id: number;
-  uuid: string;
-  nickname: string;
-  requestDate: string;
-  detail: string;
-  approver: string;
-  approveDate: string;
-}
-
-const data: History[] = [
+// 더미 데이터 (백엔드 없을 때 대비용)
+const dummyData: History[] = [
   { id: 1, uuid: '#P0001', nickname: '사용자1', requestDate: '25.01.01 12:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.01 12:00' },
   { id: 2, uuid: '#P0002', nickname: '사용자2', requestDate: '25.01.02 13:00', detail: '닉네임 변경', approver: 'leader', approveDate: '25.01.02 13:00' },
   { id: 3, uuid: '#P0003', nickname: '사용자3', requestDate: '25.01.03 14:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.03 14:00' },
@@ -32,11 +24,6 @@ const data: History[] = [
   { id: 8, uuid: '#P0008', nickname: '사용자8', requestDate: '25.01.08 19:00', detail: '닉네임 변경', approver: 'leader', approveDate: '25.01.08 19:00' },
   { id: 9, uuid: '#P0009', nickname: '사용자9', requestDate: '25.01.09 20:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.09 20:00' },
   { id: 10, uuid: '#P0010', nickname: '사용자10', requestDate: '25.01.10 21:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.10 21:00' },
-  { id: 11, uuid: '#P0011', nickname: '사용자11', requestDate: '25.01.11 22:00', detail: '닉네임 변경', approver: 'leader', approveDate: '25.01.11 22:00' },
-  { id: 12, uuid: '#P0012', nickname: '사용자12', requestDate: '25.01.12 23:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.12 23:00' },
-  { id: 13, uuid: '#P0013', nickname: '사용자13', requestDate: '25.01.13 10:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.13 10:00' },
-  { id: 14, uuid: '#P0014', nickname: '사용자14', requestDate: '25.01.14 11:00', detail: '닉네임 변경', approver: 'leader', approveDate: '25.01.14 11:00' },
-  { id: 15, uuid: '#P0015', nickname: '사용자15', requestDate: '25.01.15 12:00', detail: '프로필사진 변경', approver: 'leader', approveDate: '25.01.15 12:00' },
 ];
 
 const columnHelper = createColumnHelper<History>();
@@ -52,25 +39,44 @@ const columns = [
 ];
 
 const HistoryTable = () => {
+  const [historyData, setHistoryData] = useState<History[]>(dummyData);  // 데이터 상태
   const [globalFilter, setGlobalFilter] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
 
+  // ✅ 페이지 로드 시 백엔드에서 데이터 가져오기
+  useEffect(() => {
+    //데이터 불러오는 함수 준비
+    const fetchData = async () => {
+      try {
+        const data = await getHistoryList();//서버로부터 데이터 get요청
+        setHistoryData(data);//받아온 데이터로 상태 업데이트
+      } catch (error) {
+        console.error('히스토리 조회 실패, 더미데이터 사용', error);
+      }
+    };
+
+    fetchData(); //위에서 정의한 함수 실행: 데이터 불러오는 함수 실행
+  }, []);
+
+  // ✅ 검색 필터 적용
   const filteredData = useMemo(() => {
-    if (!globalFilter) return data;
-    return data.filter((item) =>
+    if (!globalFilter) return historyData;
+    return historyData.filter((item) =>
       Object.values(item).some((value) =>
         String(value).toLowerCase().includes(globalFilter.toLowerCase())
       )
     );
-  }, [globalFilter]);
+  }, [historyData, globalFilter]);
 
+  // ✅ 최신순 정렬 (id 기준 내림차순)
   const sortedData = useMemo(() => {
     const copied = [...filteredData];
-    copied.sort((a, b) => b.id - a.id); // id 기준 내림차순 정렬
+    copied.sort((a, b) => b.id - a.id);
     return copied;
   }, [filteredData]);
 
+  // ✅ 현재 페이지에 맞는 데이터만 추출
   const currentData = useMemo(() => {
     const start = (currentPage - 1) * pageSize;
     return sortedData.slice(start, start + pageSize);
