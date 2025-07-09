@@ -30,7 +30,9 @@ const LandingPage = () => {
 
   return (
     <div>
-      <LandingHeader step={step} setStep={handleSetStep}/>
+      {step !== 0 && (
+      <LandingHeader step={step} setStep={handleSetStep} />
+    )}
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
           <First setStep={setStep}/>
