@@ -4,6 +4,8 @@ import 원두 from "../../../assets/Landing/4페이지 원두.png"
 import 커뮤니티 from "../../../assets/Landing/4페이지 폰.png"
 import 앱 from "../../../assets/Landing/4페이지 로고.png"
 import 로고 from "../../../assets/Landing/헤더 로고.svg"
+import 애플 from "../../../assets/Landing/Apple.png"
+import 구글 from "../../../assets/Landing/Google.png"
 import useObserver from "../../../hooks/useObserver";
 
 interface FourthProps {
@@ -67,19 +69,13 @@ const Fourth = ({ autoScrollToSection3, setAutoScrollToSection3 }: FourthProps) 
         ref={obs3.ref}
         className={`${styles.section3} ${obs3.show ? styles.animate : styles.hidden}`}
       >
-        <div><img src={앱} alt="앱 아이콘"/></div>
+        <div><img className={styles.imgApp} src={앱} alt="앱 아이콘"/></div>
         <div className={styles.title3}>한잔의 커피 <br></br>
              무한한 가능성의 담소
         </div>
         <div>
-          <div>
-            <img></img>
-            <div>App Store</div>
-          </div>
-          <div>
-            <img></img>
-            <div>Go</div>
-          </div>
+            <img className={styles.img} src={애플} alt="App store"></img>
+            <img className={styles.img} src={구글} alt="구글 스토어"></img>
         </div>
       </div>
             <div
