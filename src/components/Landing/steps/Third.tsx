@@ -16,7 +16,7 @@ const Third = () => {
           <div>내게 꼭 맞는 멘토와 멘토, 지금 바로 만나보세요. <br></br>관심분야, 거리, 학교, 경험까지<br></br>내가 원하는 조건 딱 맞는 연결이 기다리고 있어요.</div>
         </div>
         <div className={styles.assets}>
-          <div><img src={프로필} alt="프로필 모음 사진" className={styles.logoImg}/></div>
+          <img src={프로필} alt="프로필 모음 사진" className={styles.logoImg}/>
         </div>
       </div>
       <div ref={obs2.ref} className={`${styles.contents} ${obs2.show ? styles.animate : styles.hidden}`}>
