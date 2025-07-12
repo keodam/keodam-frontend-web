@@ -18,20 +18,21 @@ const First = ({ setStep }: FirstProps) => {
             앱 다운로드
           </div>
         </div>
+        <div className={styles.centerContent}>
+          <div className={styles.mainText}>
+            <div>한잔의 커피</div>
+            <div>무한한 가능성의 담소</div>
+          </div>
 
-        <div className={styles.mainText}>
-          <div>한잔의 커피</div>
-          <div>무한한 가능성의 담소</div>
-        </div>
+          <div className={styles.logoArea}>
+            <img src={LangingLogo} alt="첫 랜딩페이지 로고" />
+          </div>
 
-        <div className={styles.logoArea}>
-          <img src={LangingLogo} alt="첫 랜딩페이지 로고" />
-        </div>
-
-        <div className={styles.buttonBox}>
-          <div className={styles.button} onClick={() => setStep(1)}>#커피챗</div>
-          <div className={styles.button} onClick={() => setStep(2)}>#멘토/멘티</div>
-          <div className={styles.button} onClick={() => setStep(3)}>#원두</div>
+          <div className={styles.buttonBox}>
+            <div className={styles.button} onClick={() => setStep(1)}>#커피챗</div>
+            <div className={styles.button} onClick={() => setStep(2)}>#멘토/멘티</div>
+            <div className={styles.button} onClick={() => setStep(3)}>#원두</div>
+          </div>
         </div>
       </div>
     </div>
