@@ -21,38 +21,61 @@
 .third {
   width: 100vw;
   height: calc(100vh - 132px);
-
   padding-top: 132px;
-  // border: 1px solid black;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  // ✅ 수직 정렬
+  gap: 5vh;                 // ✅ 요소 간 간격
 }
 
-.box{
-  width: 100%;
+.box {
+  width: 90%;
+  max-width: 800px;
 
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-
-  margin-top: 5vh;   // 헤더와 박스 사이에 간격
-  margin-bottom: 2vh;
-
   font-size: 23px;
+  text-align: center;
 }
-.title{
+
+.title {
   font-size: 45px;
 }
-.color{
-  color:#4974F6;
-}
-.img{
-  width: 100%;
 
-  padding: 5vh 0;
+.color {
+  color: #4974F6;
+}
+
+.img {
+  width: 100%;
+  max-width: 800px;
+
   display: flex;
   justify-content: center;
+  padding: 2vh 0;
+}
+
+@media (max-width: 768px) {
+  .third {
+    padding-top: 100px;
+    gap: 4vh;
+  }
+
+  .box {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .img img {
+    width: 90%;
+    max-width: 300px;
+  }
 }
