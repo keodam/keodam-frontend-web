@@ -2,15 +2,30 @@
   width: 100vw;
   height: 100vh;
   padding: 25px;
-  background-color: #EEF4FF;
+  position: relative;
+  background: linear-gradient(160deg, #eef4ff 0%, #dbe8ff 100%);
+
+  .blurCircle {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    background: #4974f633;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+  }
 
   .innerBox {
+    position: relative;
     width: 100%;
     height: 100%;
     background-color: white;
     border-radius: 25px;
     border: 1px solid #4974F6;
-
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,13 +38,18 @@
       justify-content: space-between;
     }
 
-    .headerLogo{
+    .headerLogo {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      .img{
+      .img {
         width: 185px;
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
       }
     }
 
@@ -42,7 +62,6 @@
       border: 1px solid black;
       border-radius: 30px;
       cursor: pointer;
-
       &:hover {
         background-color: #4974F6;
         color: white;
@@ -50,14 +69,16 @@
         transition: all 0.3s ease;
       }
     }
+
     .centerContent {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex: 1; // 남은 공간 채우기
+      flex: 1;
       margin-bottom: 10vh;
     }
+
     .mainText {
       font-size: 60px;
       font-weight: 500;
@@ -76,12 +97,10 @@
       opacity: 0;
       animation: fadeInUp 1s ease forwards;
       animation-delay: 1.2s;
-
       img {
         width: 185px;
         animation: logoWiggle 5s ease-in-out infinite;
         transition: all 0.3s ease;
-
         &:hover {
           animation: logoHoverWiggle 1.5s ease-in-out infinite;
           cursor: pointer;
@@ -110,13 +129,55 @@
         align-items: center;
         font-size: 20px;
         cursor: pointer;
+        transition: all 0.3s ease;
 
         &:hover {
           background-color: #4974F6;
           color: white;
           transform: scale(1.15);
-          transition: all 0.3s ease;
+          animation: none !important;
         }
+
+         &.glow {
+          animation: buttonPulse 2.4s ease-in-out 1;
+          
+        }
+
+        &.glowActive {
+          &.glowActive {
+            animation: buttonPulse 2.4s ease-in-out 1;
+          }
+
+        }
+      }
+    }
+
+    .glow1 {
+      animation-delay: 0s;
+    }
+    .glow2 {
+      animation-delay: 3s;
+    }
+    .glow3 {
+      animation-delay: 6s;
+    }
+
+    .scrollHint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      cursor: pointer;
+      color: #4974F6;
+      animation: fadeInUp 1s ease forwards, bounce 1.5s infinite;
+      animation-delay: 2.8s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      z-index: 2;
+
+      &:hover {
+        font-size: 20px;
       }
     }
   }
@@ -131,15 +192,10 @@
         padding: 15px;
       }
 
-      .headerLogo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .img{
-          width: 125px;
-        }
+      .headerLogo .img {
+        width: 125px;
       }
+
       .downloadButton {
         width: 100px;
         height: 38px;
@@ -151,12 +207,8 @@
         margin-bottom: 7vh;
       }
 
-      .logoArea {
-        margin-top: 5vh;
-
-        img {
-          width: 140px;
-        }
+      .logoArea img {
+        width: 140px;
       }
 
       .buttonBox {
@@ -171,8 +223,15 @@
         }
       }
     }
+
+    .scrollHint {
+      font-size: 14px;
+      bottom: 30px;
+    }
   }
 }
+
+// ===== Animations =====
 
 @keyframes fadeInUp {
   0% {
@@ -214,3 +273,51 @@
     transform: rotate(3deg) scale(1.15);
   }
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -8px);
+  }
+}
+
+// @keyframes buttonPulse {
+//   0% {
+//     background-color: white;
+//     color: #1c2b39;
+//     transform: scale(1);
+//     box-shadow: none;
+//   }
+
+//   30% {
+//     background-color: #4974F6;
+//     color: white;
+//     transform: scale(1.08);
+//     box-shadow: 0 0 12px rgba(73, 116, 246, 0.3);
+//   }
+
+//   60% {
+//     background-color: #4974F6;
+//     color: white;
+//     transform: scale(1.12);
+//     box-shadow: 0 0 20px rgba(73, 116, 246, 0.6);
+//   }
+
+//   90% {
+//     background-color: #4974F6;
+//     color: white;
+//     transform: scale(1.08);
+//     box-shadow: 0 0 12px rgba(73, 116, 246, 0.3);
+//   }
+
+//   100% {
+//     background-color: white;
+//     color: #1c2b39;
+//     transform: scale(1);
+//     box-shadow: none;
+//   }
+// }
+
+

@@ -35,7 +35,7 @@ const LandingPage = () => {
     )}
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
-          <First setStep={setStep}/>
+          <First setStep={handleSetStep} />
         </FullpageSection>
         <FullpageSection>
           <Second />
