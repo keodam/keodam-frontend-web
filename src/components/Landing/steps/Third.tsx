@@ -17,7 +17,7 @@ const Third = () => {
               <span className={styles.color}>프로필</span> 확인을 통해 <br />
               본인에게 적합한 멘토 찾기
             </div>
-            <div>
+            <div className={styles.titleContent}>
               내게 꼭 맞는 멘토와 멘토, 지금 바로 만나보세요.<br />
               관심분야, 거리, 학교, 경험까지<br />
               내가 원하는 조건 딱 맞는 연결이 기다리고 있어요.

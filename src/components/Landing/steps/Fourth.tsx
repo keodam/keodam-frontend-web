@@ -38,7 +38,7 @@ const Fourth = ({ autoScrollToSection3, setAutoScrollToSection3 }: FourthProps) 
       >
         <div className={styles.content}>
           <div className={styles.title}><span className={styles.color}>원두</span>를 통한 <br></br><span className={styles.color}>금전적인</span> 보상</div>
-          <div className={styles.titleContent}>원두는 멘토링에 대한 보상으로,<br></br>
+          <div className={styles.titleContent}><span className={styles.strong}>원두는 멘토링에 대한 보상</span>으로,<br></br>
                멘토가 기꺼이 진심 어린 조언과 도움에 대한<br></br>
                작은 보상이자 멘토의 적극적인 활둉을 권장합니다.
           </div>

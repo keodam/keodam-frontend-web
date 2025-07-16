@@ -21,7 +21,7 @@
 .first {
   width: 100vw;
   min-height: 100vh;
-  padding-top: 132px;
+  padding-top: 92px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,7 +80,8 @@
 .title1,
 .title2 {
   font-size: 42px;
-  font-weight: bold;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 900; //black
   line-height: 1.4;
   text-align: left;
 }
@@ -88,6 +89,8 @@
 .titleContent {
   text-align: left;
   font-size: 18px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 300; //black
   line-height: 1.6;
 }
 
@@ -97,27 +100,33 @@
 
 /* ✅ 반응형 */
 @media (max-width: 768px) {
+  .first {
+    padding-top: 52px;
+  }
   .total {
     padding: 0 16px;
-    gap: 8vh;
+    gap: 2vh;
   }
 
   .contents {
     flex-direction: column;
     padding: 24px 16px;
+    margin: 3vh auto;
     min-height: auto;
     gap: 24px;
   }
 
-  .content,
-  .assets {
-    width: 100%;
-  }
-
   .content {
+    width: 100%;
     font-size: 16px;
     text-align: center;
     align-items: center;
+    order: 1;
+  }
+  .assets {
+     width: 100%;
+     justify-content: center;
+     order: 2; // ✅ 항상 아래로
   }
 
   .title1,

@@ -12,3 +12,21 @@ body {
 .hide {
   display: none;
 }
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../src/assets/fonts/Pretendard-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../src/assets/fonts/Pretendard-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../src/assets/fonts/Pretendard-Black.otf') format('opentype');
+  font-weight: 900;
+}
