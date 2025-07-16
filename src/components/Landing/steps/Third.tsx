@@ -1,4 +1,4 @@
-import { style } from "framer-motion/client";
+// import { style } from "framer-motion/client";
 import styles from "./Third.module.less";
 import 프로필 from '../../../assets/Landing/3페이지 프로필.png';
 import 토글버튼 from '../../../assets/Landing/3페이지 변경.png';

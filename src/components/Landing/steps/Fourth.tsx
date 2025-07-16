@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect} from "react";
 import styles from "./Fourth.module.less";
 import 원두 from "../../../assets/Landing/4페이지 원두.png"
 import 커뮤니티 from "../../../assets/Landing/4페이지 폰.png"
