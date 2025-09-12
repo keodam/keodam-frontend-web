@@ -17,32 +17,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 50px;
+
 
     .logoImg {
       width: 185px;
+      cursor: pointer;
+    }
+    .nav {
+      font-size: 20px;
 
-      &:hover {
-        // transform: scale(1.1);
-        // transition: all 0.3s ease;
-        cursor: pointer;
+      color: #797979;
+      cursor: pointer;
+      &:hover{
+        color: #0D0D0D;
+
       }
     }
   }
 
   .downButton {
-    width: 120px;
+    width: 155px;
     height: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     border-radius: 30px;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: black;
+    color: white;
 
     &:hover {
       cursor: pointer;
-      background-color: #4974F6;
+      background-color: black;
       color: white;
       transform: scale(1.15);
       transition: all 0.3s ease;

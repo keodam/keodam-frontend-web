@@ -12,8 +12,10 @@ const LandingHeader = ({ step, setStep }: LandingHeaderProps) => {
 
   return (
     <div className={`${styles.header} ${isScrolled ? styles.active : ""}`}>
-      <div className={styles.logo} onClick={() => window.location.reload()}>
-        <img src={Logo} alt="헤더 로고" className={styles.logoImg} />
+      <div className={styles.logo}>
+        <img src={Logo} alt="헤더 로고" className={styles.logoImg} onClick={() => window.location.reload()} />
+        <div className={styles.nav}>공지사항</div>
+        <div className={styles.nav}>고객센터</div>
       </div>
       <div 
         className={styles.downButton}
