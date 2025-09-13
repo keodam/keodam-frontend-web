@@ -1,10 +1,12 @@
 import LandingHeader from "../../components/Landing/LandingHeader";
+import Notice from "../../components/Landing/notice/Notice";
+import styles from "./NoticePage.module.less"
 
 const NoticePage = () =>{
     return(
         <div>
             <LandingHeader/>
-            공지사항을 확인하는 페이지입니다.
+            <Notice/>
         </div>
     )
 }
