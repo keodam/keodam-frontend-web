@@ -1,14 +1,20 @@
 .newFirst {
   width: 100vw;
-  min-height: 100vh;
-  padding-top: 92px;
+  height: 100vh;
+  padding-top: 10%; // 위에서 글자를 밀어서 핸드폰에 가깝게 하기 위해서
   // padding-bottom: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;  // ✅ 수직 정렬
   gap: 3vh;                 // ✅ 요소 간 간격
-  background-color: #FFFFFF;
+    /* ✅ 섹션 전용 배경 */
+  background: linear-gradient(
+    to bottom,
+    #7aa6ff 0%,     // 상단: 중간 파랑
+    #ffffff 50%,    // 중간: 흰색
+    #7aa6ff 100%    // 하단: 진한 파랑
+  );
 }
 .mainText{
   // font-size: 60px;
@@ -34,6 +40,7 @@
 }
 .smartphone{
   width: 100%;
+  // background-color: white;
 }
 .smartphoneinlogo {
   position: absolute;    // ✅ 스마트폰 안에 배치

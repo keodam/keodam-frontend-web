@@ -6,7 +6,7 @@ import smartphoneinlogo from "../../../assets/Landing/smartphoneinlogo.png"
 const NewFirst = () => {
     return(
         <div className={styles.newFirst}>
-            <LandingHeader/>
+            {/* <LandingHeader/> */}
 
                 <div className={styles.mainText}>
                     <div className={styles.mainTextFirst}>한잔의 커피</div>
