@@ -1,10 +1,11 @@
 import LandingHeader from "../../components/Landing/LandingHeader";
+import Support from "../../components/Landing/support/Support";
 
 const SupportPage = () =>{
     return(
         <div>
             <LandingHeader/>
-            고객센터페이지입니다.
+            <Support/>
         </div>
     )
 }
