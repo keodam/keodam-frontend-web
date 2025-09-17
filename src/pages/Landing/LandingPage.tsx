@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LandingHeader from "../../components/Landing/LandingHeader";
-import First from "../../components/Landing/steps/First";
+// import First from "../../components/Landing/steps/First";
+import NewFirst from "../../components/Landing/steps/NewFirst";
 import Second from "../../components/Landing/steps/Second";
 import Third from "../../components/Landing/steps/Third";
 import Fourth from "../../components/Landing/steps/Fourth";
@@ -28,7 +29,8 @@ const LandingPage = () => {
     )}
       <FullpageContainer activeIndex={step} setActiveIndex={setStep}>
       <FullpageSection>
-          <First setStep={handleSetStep} />
+          {/* <First setStep={handleSetStep} /> */}
+          <NewFirst/>
         </FullpageSection>
         <FullpageSection>
           <Second />

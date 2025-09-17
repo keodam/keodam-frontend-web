@@ -1,0 +1,45 @@
+.newFirst {
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 92px;
+  // padding-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;  // ✅ 수직 정렬
+  gap: 3vh;                 // ✅ 요소 간 간격
+  background-color: #FFFFFF;
+}
+.mainText{
+  // font-size: 60px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700; // bold
+  color: #000000;
+  text-align: center;
+  margin-top: 10vh;
+
+  .mainTextFirst{
+    font-size: 36px;
+  }
+  .mainTextSecond{
+    font-size: 48px;
+  }
+}
+
+.mockup{
+  position: relative;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+.smartphone{
+  width: 100%;
+}
+.smartphoneinlogo {
+  position: absolute;    // ✅ 스마트폰 안에 배치
+  top: 50%;              // 스마트폰 화면 안쪽에서 시작 (조정 필요)
+  left: 50%;
+  transform: translateX(-50%); // 가운데 정렬
+  width: 70%;            // 로고 크기 조절
+  object-fit: contain;   // 원본 비율 유지
+}
